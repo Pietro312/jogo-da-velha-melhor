@@ -6,7 +6,16 @@
     <title>Jogo da Velha</title>
     <style>
         td {
-            font-size: ;
+            font-size: 80px;
+            background-color: rgb(65, 177, 42);
+            height: 100px;
+            width: 100px;
+            text-align: center;
+        }
+
+        td:hover {
+            background-color: rgb(157, 235, 150);
+            cursor:pointer;
         }
     </style>
 </head>
@@ -16,24 +25,34 @@
         </h1>
         <table> 
             <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-            
-            </tr>   <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-            
-            </tr>   <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-            
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+            </tr>   
+            <tr>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+            </tr>   
+            <tr>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
             </tr>
         </table>
         <script>
+            var jogador = "X"
 
+            function marcar(td)
+            {
+                if(td.innerHTML) return
+                td.innerHTML = jogador
+                if(jogador == "X"){
+                    jogador = "O"
+                } else{
+                    jogador = "X"
+                }
+            }
         </script>
     </body>
 </html>
